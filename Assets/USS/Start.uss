@@ -1,0 +1,40 @@
+.menu-title {
+    font-size: 32px;
+    unity-font-style: bold;
+    color: white;
+    animation-name: fade-in;
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+}
+
+.menu-button {
+    width: 200px;
+    height: 40px;
+    font-size: 16px;
+    color: white;
+    background-color: rgb(68, 68, 68);
+    border-radius: 8px;
+    unity-font-style: bold;
+    transition: background-color 0.3s;
+}
+
+.menu-button:hover {
+    background-color: rgb(102, 102, 102);
+}
+
+.menu-root {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(30, 30, 30);
+    padding: 20px;
+    gap: 20px;
+    color: rgb(255, 229, 229);
+    background-image: url("project://database/Assets/TextMesh%20Pro/Examples%20&%20Extras/Textures/Sunny%20Days%20-%20Seamless.jpg?fileID=2800000&guid=17c350171f7a3ca479f830547c66d187&type=3#Sunny Days - Seamless");
+}

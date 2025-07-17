@@ -1,0 +1,142 @@
+// #pragma kernel Kernel_Forces
+// #pragma kernel Kernel_Springs
+// #pragma kernel Kernel_GroundCollision
+// #pragma kernel Kernel_UpdateVelocities
+
+// struct VertexPoint
+// {
+//     float3 current;
+//     float3 previous;
+//     float3 original;
+//     float3 velocity;
+//     float3 permanentOffset;
+//     int isFixed;
+// };
+
+// struct Spring
+// {
+//     int a;
+//     int b;
+//     float restLength;
+//     float originalRest;
+// };
+
+// RWStructuredBuffer<VertexPoint> _PointBuffer;
+// RWStructuredBuffer<Spring> _SpringBuffer;
+
+// float _DeltaTime;
+// float _Mass;
+// float _Damping;
+// float3 _ExternalForce;
+// float3 _Gravity;
+
+// float _RecoveryForce;
+// float _RecoveryDamping;
+
+// float _PlasticityThreshold;
+// float _DeformationSensitivity;
+
+// float _GroundHeight;
+// float _BounceFactor;
+// float _Friction;
+
+// int _BodyType; 
+
+// [numthreads(64,1,1)]
+// void Kernel_Forces (uint3 id : SV_DispatchThreadID)
+// {
+//     if (id.x >= _PointBuffer.Length) return;
+
+//     VertexPoint p = _PointBuffer[id.x];
+//     if (p.isFixed) return;
+
+
+//     float3 force = _ExternalForce * _Mass - _Damping * p.velocity;
+//     force += _Gravity * _Mass;
+
+//     if (_BodyType == 1) 
+//     {
+//         float3 recovery = (p.original + p.permanentOffset - p.current);
+//         force += recovery * _RecoveryForce - p.velocity * _RecoveryDamping;
+//     }
+//     float3 acceleration = force / _Mass;
+//     float3 tmp = p.current;
+//     p.current += p.current - p.previous + acceleration * _DeltaTime * _DeltaTime;
+//     p.previous = tmp;
+
+//     _PointBuffer[id.x] = p;
+// }
+
+// [numthreads(64,1,1)]
+// void Kernel_Springs (uint3 id : SV_DispatchThreadID)
+// {
+//     if (id.x >= _SpringBuffer.Length) return;
+    
+//     Spring s = _SpringBuffer[id.x];
+    
+//     VertexPoint pA = _PointBuffer[s.a];
+//     VertexPoint pB = _PointBuffer[s.b];
+
+//     float3 delta = pB.current - pA.current;
+//     float len = length(delta);
+//     if (len < 0.0001f) return;
+
+//     float diff = len - s.restLength;
+//     float stress = abs(diff) / s.originalRest;
+
+//     if (_BodyType == 0 && stress > _PlasticityThreshold)
+//     {
+//         float plast = (stress - _PlasticityThreshold) * _DeformationSensitivity;
+//         s.restLength = lerp(s.restLength, len, plast * _DeltaTime);
+//         _SpringBuffer[id.x] = s; 
+
+//     float3 correction = (delta / len) * diff * 0.5f;
+
+//     if (!pA.isFixed)
+//     {
+//         InterlockedAdd(pA.current.x, correction.x);
+//         InterlockedAdd(pA.current.y, correction.y);
+//         InterlockedAdd(pA.current.z, correction.z);
+//     }
+//     if (!pB.isFixed)
+//     {
+//         InterlockedAdd(pB.current.x, -correction.x);
+//         InterlockedAdd(pB.current.y, -correction.y);
+//         InterlockedAdd(pB.current.z, -correction.z);
+//     }
+// }
+
+
+// [numthreads(64,1,1)]
+// void Kernel_GroundCollision (uint3 id : SV_DispatchThreadID)
+// {
+//     if (id.x >= _PointBuffer.Length) return;
+
+//     VertexPoint p = _PointBuffer[id.x];
+//     if (p.isFixed) return;
+
+//     if (p.current.y < _GroundHeight)
+//     {
+//         float3 vel = (p.current - p.previous) / _DeltaTime;
+        
+//         p.current.y = _GroundHeight;
+        
+//         vel.y *= -_BounceFactor;
+//         vel.xz *= _Friction;
+        
+//         p.previous = p.current - vel * _DeltaTime;
+//     }
+//     _PointBuffer[id.x] = p;
+// }
+
+// [numthreads(64,1,1)]
+// void Kernel_UpdateVelocities (uint3 id : SV_DispatchThreadID)
+// {
+//     if (id.x >= _PointBuffer.Length) return;
+    
+//     VertexPoint p = _PointBuffer[id.x];
+//     if (p.isFixed) return;
+
+//     p.velocity = (p.current - p.previous) / _DeltaTime;
+//     _PointBuffer[id.x] = p;
+// }

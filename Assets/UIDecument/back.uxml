@@ -1,0 +1,5 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <engine:VisualElement name="Sideer" style="flex-grow: 1; flex-direction: row;">
+        <engine:Button name="back" style="height: 28px; width: 32px; background-image: url(&quot;project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=-2236324273849735119&amp;guid=f12b38bd81a881242a205df8fcbf49f2&amp;type=3#arrow-left@2x&quot;); background-color: rgb(0, 0, 0); border-top-width: 2px; border-top-color: rgb(245, 235, 235); border-left-color: rgb(255, 255, 255); border-left-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-right-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255);" />
+    </engine:VisualElement>
+</engine:UXML>

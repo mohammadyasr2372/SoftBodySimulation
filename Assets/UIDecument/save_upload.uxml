@@ -1,0 +1,10 @@
+<engine:UXML xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <engine:VisualElement name="ui-container" style="flex-grow: 1; display: none; background-color: rgba(0, 0, 0, 0.8); padding: 10px; height: 50%; width: 50%; align-self: center;">
+        <engine:Label text="enter name file" style="color: white; font-size: 14px;" />
+        <engine:TextField name="file-name-input" />
+        <engine:Button name="save-button" text="Save File" />
+        <engine:ScrollView name="scene-list" style="flex-grow: 1;">
+            <engine:VisualElement name="content-panel" />
+        </engine:ScrollView>
+    </engine:VisualElement>
+</engine:UXML>

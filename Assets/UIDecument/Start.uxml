@@ -1,0 +1,9 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/USS/Start.uss?fileID=7433441132597879392&amp;guid=3e594087a0974d641987a105b06d456f&amp;type=3#Start" />
+    <engine:VisualElement class="menu-root" style="flex-grow: 1; top: -2px; color: rgb(236, 151, 151); height: 100%; background-image: url(&quot;project://database/Assets/TextMesh%20Pro/Examples%20&amp;%20Extras/Textures/Wipe%20Pattern%20-%20Radial%20Quad.psd?fileID=2800000&amp;guid=2b5e9ae96c5644d8bae932f8b4ca68a2&amp;type=3#Wipe Pattern - Radial Quad&quot;);">
+        <engine:Label text="Start" style="color: rgb(230, 206, 206); font-size: 20px; -unity-font-style: bold;" />
+        <engine:Button text="Scene Drag&amp;Drop" name="btnS1" class="menu-button menu-title" style="height: 42px;" />
+        <engine:Button text="Scene Ready" name="btnS2" class="menu-button" />
+        <engine:Button text="quit" name="btnExit" class="menu-button menu-title" />
+    </engine:VisualElement>
+</engine:UXML>

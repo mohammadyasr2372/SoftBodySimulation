@@ -1,0 +1,5 @@
+.button {
+    width: 7%;
+    height: 7%;
+    background-image: url("project://database/Assets/TextMesh%20Pro/Examples%20&%20Extras/Textures/Small%20Crate_diffuse.jpg?fileID=2800000&guid=602cb87b6a29443b8636370ea0751574&type=3#Small Crate_diffuse");
+}

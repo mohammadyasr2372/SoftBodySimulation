@@ -1,0 +1,14 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <engine:VisualElement name="ui-container" style="flex-grow: 1; display: none; background-color: rgba(111, 105, 105, 0.8); padding: 10px; width: 40%; height: auto; align-items: stretch; align-self: auto; max-width: none;">
+        <engine:Label text="Gravity Y" style="color: white; font-size: 14px;" />
+        <engine:Slider name="gravity-slider" low-value="-20" high-value="20" value="-9" fill="true" show-input-field="true" style="width: auto; height: auto;" />
+        <engine:Label text="Air Density" style="color: white; font-size: 14px;" />
+        <engine:Slider name="air-density-slider" low-value="0" high-value="2" value="1.225" fill="true" show-input-field="true" />
+        <engine:Label text="Drag Coefficient" style="color: white; font-size: 14px;" />
+        <engine:Slider name="drag-coefficient-slider" low-value="0" high-value="1" value="0.47" fill="true" show-input-field="true" />
+        <engine:Label text="Cross Sectional Area" style="color: white; font-size: 14px;" />
+        <engine:Slider name="cross-sectional-area-slider" low-value="0" high-value="5" value="1" fill="true" show-input-field="true" />
+        <engine:Label text="Humidity Factor" style="color: white; font-size: 14px;" />
+        <engine:Slider name="humidity-factor-slider" low-value="0" high-value="1" value="0" fill="true" show-input-field="true" />
+    </engine:VisualElement>
+</engine:UXML>

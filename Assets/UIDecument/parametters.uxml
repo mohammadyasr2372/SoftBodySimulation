@@ -1,0 +1,41 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/USS/Start.uss?fileID=7433441132597879392&amp;guid=3e594087a0974d641987a105b06d456f&amp;type=3#Start" />
+    <Style src="project://database/Assets/USS/panel.uss?fileID=7433441132597879392&amp;guid=17c8ab2db6486c44bbd03f0ca103320a&amp;type=3#panel" />
+    <engine:ScrollView name="ScrollView" style="font-size: 16px; width: 30%; height: 30%; align-self: flex-end; background-image: url(&quot;project://database/Assets/TextMesh%20Pro/Examples%20&amp;%20Extras/Textures/Floor%20Cement.jpg?fileID=2800000&amp;guid=283f897e4925411ebbaa758b4cb13fc2&amp;type=3#Floor Cement&quot;); background-color: rgba(209, 141, 141, 0); -unity-background-image-tint-color: rgb(251, 170, 170);">
+        <engine:VisualElement style="padding: 20px;">
+            <engine:DropdownField label="Body Type" choices="Permanent,Elastic,Rigid" index="1" name="bodyType" />
+            <engine:Label text="Physics Settings" style="font-size: 20px; -unity-font-style: bold;" />
+            <engine:Slider label="Stiffness" name="stiffness" value="500" high-value="1000" show-input-field="true" low-value="10" fill="true" />
+            <engine:Slider label="Damping" name="damping" value="6" high-value="50" show-input-field="true" fill="true" />
+            <engine:FloatField label="Max Stretch Factor" name="maxStretchFactor" value="1.5" />
+            <engine:FloatField label="Mass" name="mass" value="1" />
+            <engine:Label text="Elastic Recovery" style="font-size: 20px; -unity-font-style: bold;" />
+            <engine:Slider label="Recovery Force" name="recoveryForce" value="5" low-value="0.1" high-value="10" show-input-field="true" fill="true" />
+            <engine:Slider label="Recovery Damping" name="recoveryDamping" value="0.3" low-value="0.01" high-value="1" show-input-field="true" />
+            <engine:Label text="Plasticity Settings" style="font-size: 20px; -unity-font-style: bold;" />
+            <engine:Slider label="Deformation Sensitivity" name="deformationSensitivity" value="1" low-value="0.1" high-value="2" show-input-field="true" fill="true" />
+            <engine:Slider label="Plastic Deformation Threshold" name="plasticDeformationThreshold" value="1" low-value="0" high-value="2" show-input-field="true" fill="true" />
+            <engine:Label text="Ground Collision" style="font-size: 20px; -unity-font-style: bold;" />
+            <engine:FloatField label="Ground Height" name="groundHeight" value="0" />
+            <engine:FloatField label="Bounce Factor" name="bounceFactor" value="0.3" />
+            <engine:FloatField label="Friction" name="friction" value="0.9" />
+            <engine:Label text="Spring Generation" style="font-size: 20px; -unity-font-style: bold;" />
+            <engine:FloatField label="Extra Connection Radius" name="extraConnectionRadius" value="0.2" />
+            <engine:FloatField label="Spatial Grid Cell Size" name="spatialGridCellSize" value="0.2" />
+            <engine:IntegerField label="Constraint Iterations" name="constraintIterations" value="15" />
+            <engine:Label text="Internal Points" style="font-size: 20px; -unity-font-style: bold;" />
+            <engine:IntegerField label="Internal Points Count" name="internalPointsCount" value="150" max-length="400" />
+            <engine:Slider label="Internal Points Density" name="internalPointsDensity" value="0.5" low-value="0.01" high-value="1" show-input-field="true" />
+            <engine:FloatField label="Internal Spring Connection Radius" name="internalSpringConnectionRadius" value="0.3" />
+            <engine:IntegerField label="Max Internal Connections" name="maxInternalConnectionsPerSurfacePoint" value="3" />
+            <engine:Label text="Performance" style="font-size: 20px; -unity-font-style: bold;" />
+            <engine:Toggle label="Use Parallel Processing" name="useParallelProcessing" value="true" />
+            <engine:IntegerField label="Thread Count" name="threadCount" value="8" />
+            <engine:Slider label="Mesh Update Rate (fps)" name="meshUpdateRate" value="5" low-value="1" high-value="60" show-input-field="true" />
+            <engine:Label text="Simulation Stats" style="font-size: 20px; -unity-font-style: bold;" />
+            <engine:Label name="pointsCountLabel" text="Points: 0" />
+            <engine:Label name="springsCountLabel" text="Springs: 0" />
+            <engine:Label name="trianglesCountLabel" text="Triangles: 0" />
+        </engine:VisualElement>
+    </engine:ScrollView>
+</engine:UXML>

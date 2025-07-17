@@ -1,0 +1,9 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/USS/text.uss?fileID=7433441132597879392&amp;guid=e0d7cbd4490bfcd41b2885c1b1159dbd&amp;type=3#text" />
+    <engine:VisualElement name="performance-panel" class="test" style="background-color: rgba(0, 0, 0, 0.5); width: 25%; height: 25%; align-self: flex-start; justify-content: center; align-items: stretch; align-content: flex-end;">
+        <engine:Label name="fps-label" text="FPS: --" />
+        <engine:Label name="ms-label" text="Frame Time: -- ms" />
+        <engine:Label name="memory-label" text="Memory: -- MB" />
+        <engine:Label name="mono-label" text="Mono Used: -- MB" />
+    </engine:VisualElement>
+</engine:UXML>
